@@ -16,7 +16,8 @@ public class PerformanceEvents {
 
     @SubscribeEvent
     public void onEntityJoin(EntityJoinLevelEvent event) {
-        if (!(event.getLevel() instanceof Level level) || level.isClientSide()) {
+        Level level = event.getLevel();
+        if (level.isClientSide()) {
             return;
         }
 
@@ -75,4 +76,4 @@ public class PerformanceEvents {
             event.setCanceled(true);
         }
     }
-}
+            }
